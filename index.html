@@ -119,7 +119,26 @@
 
     <script>
         window.addEventListener('load', function() {
-            document.querySelector('.logo-carousel').classList.add('loaded');
+            var carousel = document.querySelector('.logo-carousel');
+            var track = document.querySelector('.logo-track');
+            var position = 0;
+            var speed = 0.5;
+
+            function getHalfWidth() {
+                return track.scrollWidth / 2;
+            }
+
+            function animate() {
+                position -= speed;
+                if (Math.abs(position) >= getHalfWidth()) {
+                    position = 0;
+                }
+                track.style.transform = 'translateX(' + position + 'px)';
+                requestAnimationFrame(animate);
+            }
+
+            carousel.classList.add('loaded');
+            requestAnimationFrame(animate);
         });
     </script>
 </body>

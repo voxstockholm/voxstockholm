@@ -101,11 +101,7 @@ main {
 .logo-track {
     display: flex;
     gap: 60px;
-    animation: scroll 60s linear infinite;
     width: max-content;
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 .logo-track img {
@@ -119,15 +115,6 @@ main {
 
 .logo-track img:hover {
     opacity: 1;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
 }
 
 footer {
