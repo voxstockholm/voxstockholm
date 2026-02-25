@@ -90,6 +90,8 @@ main {
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     opacity: 0;
     transition: opacity 0.5s ease;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .logo-carousel.loaded {
@@ -101,6 +103,9 @@ main {
     gap: 60px;
     animation: scroll 60s linear infinite;
     width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .logo-track img {
@@ -109,6 +114,7 @@ main {
     object-fit: contain;
     opacity: 1;
     transition: opacity 0.3s ease;
+    flex-shrink: 0;
 }
 
 .logo-track img:hover {
